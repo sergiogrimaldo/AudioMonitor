@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "2fji73DqG7X3nOJfpBYtE0WkQ0g4zYI4TcZsk7Tr8RoMlapWEi6W7X14rgzQub4CqG4hSCh3b0lh7iqXj+Q84w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sergio.grimaldo\\Documents\\IA\\Csharp-Data-Visualization\\projects\\audio\\AudioMonitor\\AudioMonitor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\fftsharp\\1.1.5\\fftsharp.1.1.5.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\microsoft.win32.systemevents\\4.6.0\\microsoft.win32.systemevents.4.6.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio\\2.0.1\\naudio.2.0.1.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio.asio\\2.0.0\\naudio.asio.2.0.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio.core\\2.0.0\\naudio.core.2.0.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio.midi\\2.0.1\\naudio.midi.2.0.1.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio.wasapi\\2.0.0\\naudio.wasapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio.winforms\\2.0.1\\naudio.winforms.2.0.1.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\naudio.winmm\\2.0.1\\naudio.winmm.2.0.1.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\scottplot\\4.1.45\\scottplot.4.1.45.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\scottplot.winforms\\4.1.45\\scottplot.winforms.4.1.45.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\system.drawing.common\\4.6.1\\system.drawing.common.4.6.1.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\sergio.grimaldo\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
