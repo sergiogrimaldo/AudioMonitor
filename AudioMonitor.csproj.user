@@ -8,6 +8,9 @@
     <Compile Update="FftMonitorForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="IdentificacionPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
