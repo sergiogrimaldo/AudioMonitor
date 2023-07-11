@@ -28,3 +28,5 @@ C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\A
 C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.pdb
 C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.genruntimeconfig.cache
 C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\ref\AudioMonitor.dll
+C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.PanelPrincipalForm.resources
+C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.Properties.Resources.resources
