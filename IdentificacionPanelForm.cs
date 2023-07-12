@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,5 +22,14 @@ namespace AudioMonitor
         {
 
         }
+public string TextoEtiqueta
+        {
+
+            get { return label3.Text; }
+
+            set { label3.Text = value; }
+
+        }
+
     }
 }

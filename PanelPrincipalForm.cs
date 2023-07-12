@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace AudioMonitor
+﻿namespace AudioMonitor
 {
     public partial class PanelPrincipalForm : Form
     {
@@ -17,34 +7,25 @@ namespace AudioMonitor
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void EnviarDatoAlOtroFormulario()
         {
+            // Obtener el formulario de destino
+            IdentificacionPanelForm otroFormulario = new IdentificacionPanelForm();
 
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
+            // Obtener el dato seleccionado del ListBox
+            string datoSeleccionado = listaNombre.SelectedItem.ToString();
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            // Establecer el valor de la propiedad en el formulario de destino
+            otroFormulario.TextoEtiqueta = datoSeleccionado;
 
-        }
 
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            // Mostrar el formulario de destino
+            otroFormulario.Show();
         }
     }
 }

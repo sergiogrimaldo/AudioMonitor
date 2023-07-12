@@ -32,12 +32,14 @@
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -77,6 +79,15 @@
             label1.Text = "Estudiante:";
             label1.Click += label1_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(205, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(38, 15);
+            label3.TabIndex = 9;
+            label3.Text = "label3";
+            // 
             // IdentificacionPanelForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -96,5 +107,6 @@
         private Button button1;
         private Label label2;
         private Label label1;
+        private Label label3;
     }
 }

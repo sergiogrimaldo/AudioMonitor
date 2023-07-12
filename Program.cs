@@ -13,7 +13,7 @@ namespace AudioMonitor
             ApplicationConfiguration.Initialize();
             //Application.Run(new AudioMonitorForm());
             //Application.Run(new FftMonitorForm());
-            Application.Run(new MenuForm());
+            Application.Run(new PanelPrincipalForm());
         }
     }
 }
