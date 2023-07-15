@@ -30,7 +30,7 @@
         {
             groupBox1 = new GroupBox();
             listaNombre = new ListBox();
-            button1 = new Button();
+            BtnEnter = new Button();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -42,7 +42,7 @@
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(listaNombre);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(BtnEnter);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(pictureBox1);
@@ -57,20 +57,19 @@
             listaNombre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             listaNombre.FormattingEnabled = true;
             listaNombre.ItemHeight = 21;
-            listaNombre.Items.AddRange(new object[] { "Estudiante...", "Orlando Divandoque", "Sebastian Garcés", "Sergio Grimaldos", "Laura López", "Sergio López" });
             listaNombre.Location = new Point(148, 243);
             listaNombre.Name = "listaNombre";
             listaNombre.Size = new Size(261, 25);
             listaNombre.TabIndex = 9;
             // 
-            // button1
+            // BtnEnter
             // 
-            button1.Location = new Point(438, 243);
-            button1.Name = "button1";
-            button1.Size = new Size(64, 25);
-            button1.TabIndex = 6;
-            button1.Text = ">>";
-            button1.UseVisualStyleBackColor = true;
+            BtnEnter.Location = new Point(438, 243);
+            BtnEnter.Name = "BtnEnter";
+            BtnEnter.Size = new Size(64, 25);
+            BtnEnter.TabIndex = 6;
+            BtnEnter.Text = ">>";
+            BtnEnter.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -119,7 +118,7 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Button button1;
+        private Button BtnEnter;
         private PictureBox pictureBox1;
         private Label label1;
         private ListBox listaNombre;

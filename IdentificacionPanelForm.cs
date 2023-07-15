@@ -22,7 +22,7 @@ namespace AudioMonitor
         {
 
         }
-public string TextoEtiqueta
+        public string TextoEtiqueta
         {
 
             get { return label3.Text; }
