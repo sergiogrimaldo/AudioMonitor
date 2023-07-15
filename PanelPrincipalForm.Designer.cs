@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            listaNombre = new ListBox();
+            listaNombre = new ComboBox();
             BtnEnter = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -54,13 +54,11 @@
             // 
             // listaNombre
             // 
-            listaNombre.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             listaNombre.FormattingEnabled = true;
-            listaNombre.ItemHeight = 21;
-            listaNombre.Location = new Point(148, 243);
+            listaNombre.Location = new Point(167, 243);
             listaNombre.Name = "listaNombre";
-            listaNombre.Size = new Size(261, 25);
-            listaNombre.TabIndex = 9;
+            listaNombre.Size = new Size(248, 23);
+            listaNombre.TabIndex = 10;
             // 
             // BtnEnter
             // 
@@ -70,6 +68,7 @@
             BtnEnter.TabIndex = 6;
             BtnEnter.Text = ">>";
             BtnEnter.UseVisualStyleBackColor = true;
+            BtnEnter.Click += ListaNombre_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -121,7 +120,7 @@
         private Button BtnEnter;
         private PictureBox pictureBox1;
         private Label label1;
-        private ListBox listaNombre;
         private Label label2;
+        private ComboBox listaNombre;
     }
 }

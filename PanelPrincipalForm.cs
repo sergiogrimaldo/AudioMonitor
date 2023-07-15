@@ -23,6 +23,11 @@ namespace AudioMonitor
             // Establecer "Estudiante" como el valor por defecto
             listaNombre.SelectedIndex = 0;
             BtnEnter.Enabled = false;
+
+            //// Cambiar el estilo del ListBox a DropDownList
+            //listaNombre.DropDownStyle = ComboBoxStyle.DropDown;
+
+
             // Suscribir el evento SelectedIndexChanged del ListBox
             listaNombre.SelectedIndexChanged += ListaNombre_SelectedIndexChanged;
         }
@@ -47,27 +52,23 @@ namespace AudioMonitor
 
                 // Deshabilitar el botón BtnEnter si se selecciona "Estudiante"
                 BtnEnter.Enabled = false;
-                
+
             }
 
+        }
 
-            /// <summary>
-            /// 
-            /// </summary>
-            //public void EnviarDatoAlOtroFormulario()
-            //{
-            //    Obtener el formulario de destino
-            //   IdentificacionPanelForm otroFormulario = new IdentificacionPanelForm();
+        private void BtnEnter_Click(object sender, EventArgs e)
+        {
 
-            //    Obtener el dato seleccionado del ListBox
-            //    string datoSeleccionado = listaNombre.SelectedItem.ToString();
+            // Crear una instancia del formulario MenuForm
+            MenuForm menuForm = new MenuForm();
 
-            //    Establecer el valor de la propiedad en el formulario de destino
-            //    otroFormulario.TextoEtiqueta = datoSeleccionado;
+            // Mostrar el formulario MenuForm
+            menuForm.Show();
 
-            //    Mostrar el formulario de destino
-            //    otroFormulario.Show();
-            //}
+            // Cerrar el formulario actual
+            this.Hide();
+            this.Dispose();
         }
     }
 }
