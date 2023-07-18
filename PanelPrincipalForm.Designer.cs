@@ -68,7 +68,7 @@
             BtnEnter.TabIndex = 6;
             BtnEnter.Text = ">>";
             BtnEnter.UseVisualStyleBackColor = true;
-            BtnEnter.Click += ListaNombre_SelectedIndexChanged;
+            BtnEnter.Click += BtnEnter_Click;
             // 
             // label2
             // 

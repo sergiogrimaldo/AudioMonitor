@@ -18,6 +18,9 @@ namespace AudioMonitor
 {
     public partial class MenuForm : Form
     {
+        // Propiedad pública para recibir el valor de seleccionActual
+        public string SeleccionRecibida { get; set; }
+
         public readonly MMDevice[] AudioDevices = new MMDeviceEnumerator()
             .EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active)
             .ToArray();
@@ -25,7 +28,7 @@ namespace AudioMonitor
         public MenuForm()
         {
             InitializeComponent();
-
+            this.Load += MenuForm_Load;
             foreach (MMDevice device in AudioDevices)
             {
                 string deviceType = device.DataFlow == DataFlow.Capture ? "INPUT" : "OUTPUT";
@@ -34,6 +37,11 @@ namespace AudioMonitor
             }
 
             lbDevice.SelectedIndex = 0;
+        }
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            // Actualizar el valor del Label con el valor recibido
+            nom_estudiante.Text = SeleccionRecibida;
         }
 
         private WasapiCapture GetSelectedDevice()
@@ -54,6 +62,16 @@ namespace AudioMonitor
         {
             WasapiCapture captureDevice = GetSelectedDevice();
             new FftMonitorForm(captureDevice).ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

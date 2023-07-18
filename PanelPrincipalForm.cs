@@ -63,12 +63,14 @@ namespace AudioMonitor
             // Crear una instancia del formulario MenuForm
             MenuForm menuForm = new MenuForm();
 
+            // Establecer el valor de seleccionActual en la propiedad SeleccionRecibida del formulario 
+            menuForm.SeleccionRecibida = seleccionActual;
+
             // Mostrar el formulario MenuForm
             menuForm.Show();
 
             // Cerrar el formulario actual
-            this.Hide();
-            this.Dispose();
+            this.Hide();  
         }
     }
 }

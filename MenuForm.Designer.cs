@@ -33,6 +33,9 @@
             lbDevice = new ListBox();
             groupBox1 = new GroupBox();
             label1 = new Label();
+            textBox1 = new TextBox();
+            label2 = new Label();
+            nom_estudiante = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +66,7 @@
             lbDevice.ItemHeight = 15;
             lbDevice.Location = new Point(3, 19);
             lbDevice.Name = "lbDevice";
-            lbDevice.Size = new Size(394, 112);
+            lbDevice.Size = new Size(187, 123);
             lbDevice.TabIndex = 2;
             // 
             // groupBox1
@@ -72,7 +75,7 @@
             groupBox1.Controls.Add(lbDevice);
             groupBox1.Location = new Point(12, 66);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(400, 134);
+            groupBox1.Size = new Size(193, 145);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Selecciona la entrada de sonido";
@@ -80,17 +83,53 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 24);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(15, 25);
             label1.Name = "label1";
-            label1.Size = new Size(68, 15);
+            label1.Size = new Size(89, 21);
             label1.TabIndex = 5;
             label1.Text = "Estudiante: ";
+            // 
+            // textBox1
+            // 
+            textBox1.AllowDrop = true;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Location = new Point(211, 85);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(164, 53);
+            textBox1.TabIndex = 7;
+            textBox1.Text = "Por favor, repita la siguiente palabra cuando inicie la grabación:";
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(247, 152);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 23);
+            label2.TabIndex = 8;
+            label2.Text = "Asistencia";
+            // 
+            // nom_estudiante
+            // 
+            nom_estudiante.AutoSize = true;
+            nom_estudiante.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            nom_estudiante.Location = new Point(110, 25);
+            nom_estudiante.Name = "nom_estudiante";
+            nom_estudiante.Size = new Size(0, 21);
+            nom_estudiante.TabIndex = 9;
             // 
             // MenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(424, 299);
+            Controls.Add(nom_estudiante);
+            Controls.Add(label2);
+            Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(btnLaunchFFT);
@@ -109,5 +148,8 @@
         private ListBox lbDevice;
         private GroupBox groupBox1;
         private Label label1;
+        private TextBox textBox1;
+        private Label label2;
+        private Label nom_estudiante;
     }
 }
