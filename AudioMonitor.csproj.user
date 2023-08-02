@@ -11,6 +11,9 @@
     <Compile Update="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PanelFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PanelPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>

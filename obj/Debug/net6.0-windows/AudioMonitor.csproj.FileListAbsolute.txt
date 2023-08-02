@@ -31,3 +31,4 @@ C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\A
 C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.PanelPrincipalForm.resources
 C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.Properties.Resources.resources
 C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\sergio.grimaldo\Documents\IA\Csharp-Data-Visualization\projects\audio\AudioMonitor\obj\Debug\net6.0-windows\AudioMonitor.PanelFinal.resources

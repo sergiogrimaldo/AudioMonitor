@@ -48,7 +48,11 @@ namespace AudioMonitor
         private void button2_Click(object sender, EventArgs e)
         {
             WasapiCapture captureDevice = GetSelectedDevice();
-            new FftMonitorForm(captureDevice).ShowDialog();
+            new FftMonitorForm(captureDevice,SeleccionRecibida).ShowDialog();
+
+           
+
+            this.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)

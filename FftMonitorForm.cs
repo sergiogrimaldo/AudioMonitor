@@ -1,6 +1,7 @@
 ﻿using NAudio.CoreAudioApi;
 using NAudio.Wave;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace AudioMonitor;
@@ -10,9 +11,11 @@ public partial class FftMonitorForm : Form
     readonly double[] AudioValues;
 
     readonly WasapiCapture AudioDevice;
+    readonly String SeleccionNombre;
     readonly double[] FftValues;
     readonly double[] FftUso;
 
+ 
     public bool bActivo { get; private set; }
     private string sMuestra;
 
@@ -22,11 +25,13 @@ public partial class FftMonitorForm : Form
 
     private BindingSource srf;
 
-    public FftMonitorForm(WasapiCapture audioDevice)
+    public FftMonitorForm(WasapiCapture audioDevice,String NombreEstudiante)
     {
         InitializeComponent();
+
         AudioDevice = audioDevice;
         WaveFormat fmt = audioDevice.WaveFormat;
+        SeleccionNombre = NombreEstudiante;
 
         bActivo = false;
 
@@ -92,8 +97,9 @@ public partial class FftMonitorForm : Form
         dgFreq.DataSource = srf;
     }
 
-    private void CambiarEstado()
+    private async void CambiarEstado()
     {
+
         bActivo = !bActivo;
         if (bActivo)
         {
@@ -109,6 +115,7 @@ public partial class FftMonitorForm : Form
         }
         else
         {
+            double probabilidad = GenerarProbabilidadAleatoria();
             btnInicia.BackColor = Color.Green;
             btnInicia.Text = "INICIA";
             var sr = new BindingSource();
@@ -142,7 +149,37 @@ public partial class FftMonitorForm : Form
             ptHist.Plot.SetAxisLimits(/*mn*/0, dtFreq.Where(x => x["ix"]?.Value<double>() > 0).Max(x => x["ix"]?.Value<double>()) /*mx*/, 0, FftUso.Max());
 
             ptHist.Refresh();
+
+            if (probabilidad > 40)
+            {
+                lbltexto.Text = "Validado";
+
+                // Espera 5 segundos y luego oculta el formulario
+                await Task.Delay(2000);
+
+                this.Hide();
+
+                // Crear una instancia del formulario MenuForm
+                PanelFinal menuForm = new PanelFinal();
+
+                // Establecer el valor de seleccionActual en la propiedad SeleccionRecibida del formulario 
+                menuForm.SeleccionRecibida = SeleccionNombre;
+
+                // Mostrar el formulario MenuForm
+                menuForm.Show();
+            }
+            else
+            {
+                lbltexto.Text = "Repitalo de nuevo.";
+            }
         }
+    }
+
+
+    private double GenerarProbabilidadAleatoria()
+    {
+        Random random = new Random();
+        return random.NextDouble() * 100;
     }
 
     private void FftMonitorForm_FormClosed(object? sender, FormClosedEventArgs e)

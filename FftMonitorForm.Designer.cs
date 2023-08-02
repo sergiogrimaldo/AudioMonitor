@@ -36,6 +36,7 @@
             ptHist = new ScottPlot.FormsPlot();
             dgFreq = new DataGridView();
             dgData = new DataGridView();
+            lbltexto = new Label();
             ((System.ComponentModel.ISupportInitialize)dgFreq).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgData).BeginInit();
             SuspendLayout();
@@ -107,11 +108,22 @@
             dgData.TabIndex = 13;
             dgData.Visible = false;
             // 
+            // lbltexto
+            // 
+            lbltexto.AutoSize = true;
+            lbltexto.Font = new Font("Segoe UI", 32F, FontStyle.Regular, GraphicsUnit.Point);
+            lbltexto.Location = new Point(39, 353);
+            lbltexto.Name = "lbltexto";
+            lbltexto.Size = new Size(361, 59);
+            lbltexto.TabIndex = 16;
+            lbltexto.Text = "                            ";
+            // 
             // FftMonitorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(473, 464);
+            Controls.Add(lbltexto);
             Controls.Add(ptHist);
             Controls.Add(dgFreq);
             Controls.Add(dgData);
@@ -135,5 +147,6 @@
         private ScottPlot.FormsPlot ptHist;
         private DataGridView dgFreq;
         private DataGridView dgData;
+        private Label lbltexto;
     }
 }
