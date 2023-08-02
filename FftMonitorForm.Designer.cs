@@ -60,7 +60,7 @@
             btnInicia.BackColor = Color.Green;
             btnInicia.Font = new Font("Arial Black", 16F, FontStyle.Bold, GraphicsUnit.Point);
             btnInicia.ForeColor = Color.White;
-            btnInicia.Location = new Point(194, 221);
+            btnInicia.Location = new Point(134, 234);
             btnInicia.Name = "btnInicia";
             btnInicia.Size = new Size(211, 85);
             btnInicia.TabIndex = 10;
@@ -74,17 +74,18 @@
             formsPlot1.Location = new Point(12, 27);
             formsPlot1.Margin = new Padding(4, 3, 4, 3);
             formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(425, 201);
+            formsPlot1.Size = new Size(448, 212);
             formsPlot1.TabIndex = 9;
             // 
             // ptHist
             // 
             ptHist.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ptHist.Location = new Point(-5, 334);
+            ptHist.Location = new Point(6, 292);
             ptHist.Margin = new Padding(4, 3, 4, 3);
             ptHist.Name = "ptHist";
-            ptHist.Size = new Size(465, 107);
+            ptHist.Size = new Size(0, 175);
             ptHist.TabIndex = 15;
+            ptHist.Visible = false;
             // 
             // dgFreq
             // 
@@ -94,6 +95,7 @@
             dgFreq.RowTemplate.Height = 25;
             dgFreq.Size = new Size(341, 157);
             dgFreq.TabIndex = 14;
+            dgFreq.Visible = false;
             // 
             // dgData
             // 
@@ -103,12 +105,13 @@
             dgData.RowTemplate.Height = 25;
             dgData.Size = new Size(341, 157);
             dgData.TabIndex = 13;
+            dgData.Visible = false;
             // 
             // FftMonitorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1007, 453);
+            ClientSize = new Size(473, 464);
             Controls.Add(ptHist);
             Controls.Add(dgFreq);
             Controls.Add(dgData);
