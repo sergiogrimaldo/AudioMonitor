@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnLaunchWaveform = new Button();
             btnLaunchFFT = new Button();
             lbDevice = new ListBox();
             groupBox1 = new GroupBox();
@@ -39,23 +38,13 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnLaunchWaveform
-            // 
-            btnLaunchWaveform.Location = new Point(59, 217);
-            btnLaunchWaveform.Name = "btnLaunchWaveform";
-            btnLaunchWaveform.Size = new Size(117, 54);
-            btnLaunchWaveform.TabIndex = 0;
-            btnLaunchWaveform.Text = "Audio Waveform";
-            btnLaunchWaveform.UseVisualStyleBackColor = true;
-            btnLaunchWaveform.Click += button1_Click;
-            // 
             // btnLaunchFFT
             // 
-            btnLaunchFFT.Location = new Point(211, 217);
+            btnLaunchFFT.Location = new Point(139, 217);
             btnLaunchFFT.Name = "btnLaunchFFT";
             btnLaunchFFT.Size = new Size(117, 54);
             btnLaunchFFT.TabIndex = 1;
-            btnLaunchFFT.Text = "Audio FFT";
+            btnLaunchFFT.Text = "Iniciar Prueba";
             btnLaunchFFT.UseVisualStyleBackColor = true;
             btnLaunchFFT.Click += button2_Click;
             // 
@@ -133,7 +122,6 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Controls.Add(btnLaunchFFT);
-            Controls.Add(btnLaunchWaveform);
             Name = "MenuForm";
             StartPosition = FormStartPosition.CenterScreen;
             groupBox1.ResumeLayout(false);
@@ -142,8 +130,6 @@
         }
 
         #endregion
-
-        private Button btnLaunchWaveform;
         private Button btnLaunchFFT;
         private ListBox lbDevice;
         private GroupBox groupBox1;

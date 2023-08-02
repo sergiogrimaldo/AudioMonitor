@@ -28,56 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.formsPlot1 = new ScottPlot.FormsPlot();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label1 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            btnInicia = new Button();
+            formsPlot1 = new ScottPlot.FormsPlot();
+            ptHist = new ScottPlot.FormsPlot();
+            dgFreq = new DataGridView();
+            dgData = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgFreq).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgData).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Peak Frequency:";
-            // 
-            // formsPlot1
-            // 
-            this.formsPlot1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.formsPlot1.Location = new System.Drawing.Point(12, 41);
-            this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(555, 273);
-            this.formsPlot1.TabIndex = 7;
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(93, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Peak Frequency:";
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 20;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Enabled = true;
+            timer1.Interval = 20;
+            timer1.Tick += timer1_Tick;
+            // 
+            // btnInicia
+            // 
+            btnInicia.BackColor = Color.Green;
+            btnInicia.Font = new Font("Arial Black", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInicia.ForeColor = Color.White;
+            btnInicia.Location = new Point(194, 221);
+            btnInicia.Name = "btnInicia";
+            btnInicia.Size = new Size(211, 85);
+            btnInicia.TabIndex = 10;
+            btnInicia.Text = "INICIA";
+            btnInicia.UseVisualStyleBackColor = false;
+            btnInicia.Click += btnInicia_Click;
+            // 
+            // formsPlot1
+            // 
+            formsPlot1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            formsPlot1.Location = new Point(12, 27);
+            formsPlot1.Margin = new Padding(4, 3, 4, 3);
+            formsPlot1.Name = "formsPlot1";
+            formsPlot1.Size = new Size(425, 201);
+            formsPlot1.TabIndex = 9;
+            // 
+            // ptHist
+            // 
+            ptHist.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ptHist.Location = new Point(-5, 334);
+            ptHist.Margin = new Padding(4, 3, 4, 3);
+            ptHist.Name = "ptHist";
+            ptHist.Size = new Size(465, 107);
+            ptHist.TabIndex = 15;
+            // 
+            // dgFreq
+            // 
+            dgFreq.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgFreq.Location = new Point(478, 251);
+            dgFreq.Name = "dgFreq";
+            dgFreq.RowTemplate.Height = 25;
+            dgFreq.Size = new Size(341, 157);
+            dgFreq.TabIndex = 14;
+            // 
+            // dgData
+            // 
+            dgData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgData.Location = new Point(478, 62);
+            dgData.Name = "dgData";
+            dgData.RowTemplate.Height = 25;
+            dgData.Size = new Size(341, 157);
+            dgData.TabIndex = 13;
             // 
             // FftMonitorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 326);
-            this.Controls.Add(this.formsPlot1);
-            this.Controls.Add(this.label1);
-            this.Name = "FftMonitorForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FFT Monitor";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1007, 453);
+            Controls.Add(ptHist);
+            Controls.Add(dgFreq);
+            Controls.Add(dgData);
+            Controls.Add(btnInicia);
+            Controls.Add(formsPlot1);
+            Controls.Add(label1);
+            Name = "FftMonitorForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FFT Monitor";
+            ((System.ComponentModel.ISupportInitialize)dgFreq).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgData).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Label label1;
-        private ScottPlot.FormsPlot formsPlot1;
         private System.Windows.Forms.Timer timer1;
+        private Button btnInicia;
+        private ScottPlot.FormsPlot formsPlot1;
+        private ScottPlot.FormsPlot ptHist;
+        private DataGridView dgFreq;
+        private DataGridView dgData;
     }
 }
