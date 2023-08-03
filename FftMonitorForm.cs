@@ -3,11 +3,15 @@ using NAudio.Wave;
 using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using AuditorInfraestructure.Entities.AuditorInfraestructure;
 
 namespace AudioMonitor;
 
 public partial class FftMonitorForm : Form
 {
+    //Variable del dbcontest
+    private ProyectoContext db;
+
     readonly double[] AudioValues;
 
     readonly WasapiCapture AudioDevice;
@@ -15,7 +19,7 @@ public partial class FftMonitorForm : Form
     readonly double[] FftValues;
     readonly double[] FftUso;
 
- 
+
     public bool bActivo { get; private set; }
     private string sMuestra;
 
@@ -25,9 +29,11 @@ public partial class FftMonitorForm : Form
 
     private BindingSource srf;
 
-    public FftMonitorForm(WasapiCapture audioDevice,String NombreEstudiante)
+    private double periodo;
+    public FftMonitorForm(WasapiCapture audioDevice, String NombreEstudiante)
     {
         InitializeComponent();
+        db = new ProyectoContext();
 
         AudioDevice = audioDevice;
         WaveFormat fmt = audioDevice.WaveFormat;
@@ -145,12 +151,12 @@ public partial class FftMonitorForm : Form
             srf.DataSource = rd;
             dgFreq.DataSource = srf;
             dgFreq.Refresh();
-
+            var dato = rd.First()["ix"].Value<int>() * periodo;
             ptHist.Plot.SetAxisLimits(/*mn*/0, dtFreq.Where(x => x["ix"]?.Value<double>() > 0).Max(x => x["ix"]?.Value<double>()) /*mx*/, 0, FftUso.Max());
 
             ptHist.Refresh();
 
-            if (probabilidad > 40)
+            if (Validar(SeleccionNombre, dato))
             {
                 lbltexto.Text = "Validado";
 
@@ -170,7 +176,7 @@ public partial class FftMonitorForm : Form
             }
             else
             {
-                lbltexto.Text = "Repitalo de nuevo.";
+                lbltexto.Text = "Repitalo de nuevo";
             }
         }
     }
@@ -237,6 +243,7 @@ public partial class FftMonitorForm : Form
         }
         double fftPeriod = FftSharp.Transform.FFTfreqPeriod(AudioDevice.WaveFormat.SampleRate, fftMag.Length);
         double peakFrequency = fftPeriod * peakIndex;
+        periodo = fftPeriod;
         label1.Text = $"Peak Frequency: {peakFrequency:N0} Hz";
 
 
@@ -266,5 +273,66 @@ public partial class FftMonitorForm : Form
     private void FftMonitorForm_Load(object sender, EventArgs e)
     {
 
+    }
+
+    private bool Validar(string nombre, double frecuencia)
+    {
+        //Consultar a la base de datos a la información que tenga de esa persona
+        var sql_consulta_nombre = $"SELECT ID FROM ESTUDIANTES WHERE Nombre = {SeleccionNombre}";
+        var estudiante = db.Estudiantes.Where(x => x.Nombre == nombre).First();
+
+        //Frecuencia persona
+        //Comparar contra la variable frecuencia
+        var resultado = Comparacion((float) estudiante.Registro1, (float) estudiante.Registro2, (float) estudiante.Registro3, (float) frecuencia);
+        if (resultado != 0)
+        {
+            if (resultado < estudiante.Registro1)
+            {
+                estudiante.Registro1 = resultado;
+            }
+            else
+            {
+                if (resultado > estudiante.Registro3)
+                {
+                    estudiante.Registro3 = resultado;
+                }
+                else
+                {
+                    estudiante.Registro2 = resultado;
+                }
+            }
+            db.SaveChanges();
+            db.Asistencias.Add(new Asistencia { 
+                IdEstudiante = estudiante.Id,
+                Fecha = DateTime.Now,
+                Registro = frecuencia,
+                Exitoso = true
+            });
+            db.SaveChanges();
+            return true;
+        }
+        
+        db.Asistencias.Add(new Asistencia
+        {
+            IdEstudiante = estudiante.Id,
+            Fecha = DateTime.Now,
+            Registro = frecuencia,
+            Exitoso = false
+        });
+        db.SaveChanges();
+        return false;
+    }
+    private float Comparacion(float registro1, float registro2, float registro3, float entrada, float porcentaje = 0.1f)
+    {
+        var media = (registro1 + registro2 + registro3) / 3;
+        var resta_absoluta = Math.Abs(media - entrada);
+        var minimo = registro1 - (registro3 - registro1)*porcentaje;
+        var maximo = registro3 + (registro3 - registro1) * porcentaje;
+        if (entrada>minimo && entrada<maximo)
+        {
+            return entrada;
+        }
+
+        return 0f;
     }
 }
